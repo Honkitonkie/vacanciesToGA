@@ -1,5 +1,5 @@
 const puppeteer = require ('puppeteer');
-const app = require ('./app_');
+const app = require ('./scrapeVacancies');
 
 puppeteer
   .launch ({headless: true})
