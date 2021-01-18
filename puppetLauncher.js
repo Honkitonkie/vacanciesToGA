@@ -1,12 +1,13 @@
 const puppeteer = require ('puppeteer');
-const app = require ('./app_');
+const scrape = require ('./scrapeKeser');
 
-puppeteer
-  .launch ({headless: true})
+const puppetLauncher = puppeteer
+  .launch ({headless: false})
   .then (async browser => {
-    let hoeveelVacatures = await app.vacatureNummer
-    const url = 'https://keser.nl/hoeveelvacatures?hoeveelVacatures='+Number(hoeveelVacatures);
-    //opening a new page and navigating to Reddit
+    let hoeveelVacatures = await scrape.vacatureNummer;
+    let hoeveelKandidaten = await scrape.kandidatenNummer;
+    const url = 'https://keser.nl/hoeveelvacatures?hoeveelVacatures='+Number(hoeveelVacatures)+'&hoeveelKandidaten='+Number(hoeveelKandidaten);
+    console.log('https://keser.nl/hoeveelvacatures?hoeveelVacatures='+Number(hoeveelVacatures)+'&hoeveelKandidaten='+Number(hoeveelKandidaten));
     const page = await browser.newPage ();
     await page.goto (url);
     await page.waitForSelector ('body');
@@ -27,3 +28,5 @@ page.on('request', req => {
   .catch (function (err) {
     console.error (err);
   });
+
+    exports.puppetLauncher = puppetLauncher;
