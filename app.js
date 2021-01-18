@@ -6,7 +6,7 @@ if (minute==undefined){
 }
 
   const doSomething = new CronJob(
-    '1 1 * * 0-7', //cron time
+    '55 22 * * 0-7', //cron time
     goDoIt, //replace with your function that you want to call
     null, //oncomplete
     false, //start flag
