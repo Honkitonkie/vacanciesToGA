@@ -1,12 +1,7 @@
 var CronJob = require('cron').CronJob;
-let minute;
-
-if (minute==undefined){
-  minute = 33;
-}
 
   const doSomething = new CronJob(
-    '5 23 * * 0-7', //cron time
+    '30 23 * * 0-6', //cron time
     goDoIt, //replace with your function that you want to call
     null, //oncomplete
     false, //start flag
