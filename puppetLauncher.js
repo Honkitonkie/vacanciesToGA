@@ -2,7 +2,7 @@ const puppeteer = require ('puppeteer');
 const scrape = require ('./scrapeKeser');
 
 const puppetLauncher = puppeteer
-  .launch ({headless: false})
+  .launch ({headless: true})
   .then (async browser => {
     let hoeveelVacatures = await scrape.vacatureNummer;
     let hoeveelKandidaten = await scrape.kandidatenNummer;
