@@ -6,7 +6,7 @@ if (minute==undefined){
 }
 
   const doSomething = new CronJob(
-    '0-59 * * * *', //cron time
+    '1 1 * * 0-7', //cron time
     goDoIt, //replace with your function that you want to call
     null, //oncomplete
     false, //start flag
@@ -14,10 +14,9 @@ if (minute==undefined){
     );
     
   function goDoIt() {
-      // const puppetLauncher = require ('./puppetLauncher');
+      const puppetLauncher = require ('./puppetLauncher');
       console.log('Events transpire every day...');
-      // puppetLauncher.puppetLauncher
-      minute = minute + 2;
+      puppetLauncher.puppetLauncher
     }
 
   doSomething.start()  
