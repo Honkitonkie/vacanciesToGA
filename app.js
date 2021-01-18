@@ -2,11 +2,12 @@ const puppeteer = require ('puppeteer');
 const app = require ('./scrapeVacancies');
 
 puppeteer
-  .launch ({headless: true})
+  .launch ({headless: false})
   .then (async browser => {
-    let hoeveelVacatures = await app.vacatureNummer
-    const url = 'https://keser.nl/hoeveelvacatures?hoeveelVacatures='+Number(hoeveelVacatures);
-    //opening a new page and navigating to Reddit
+    let hoeveelVacatures = await app.vacatureNummer;
+    let hoeveelKandidaten = await app.kandidatenNummer;
+    const url = 'https://keser.nl/hoeveelvacatures?hoeveelVacatures='+Number(hoeveelVacatures)+'&hoeveelKandidaten='+Number(hoeveelKandidaten);
+    console.log('https://keser.nl/hoeveelvacatures?hoeveelVacatures='+Number(hoeveelVacatures)+'&hoeveelKandidaten='+Number(hoeveelKandidaten));
     const page = await browser.newPage ();
     await page.goto (url);
     await page.waitForSelector ('body');
