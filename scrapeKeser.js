@@ -11,7 +11,6 @@ const vacatureNummer = rp(vacatureURL)
   .then(function(html){
     //success!
     ditVacatureNummer = $('div > article', html).length;
-    console.log("ditVacatureNummer:", ditVacatureNummer); 
     return ditVacatureNummer;
   })
   .catch(function(err){
@@ -22,7 +21,6 @@ const kandidatenNummer = rp(kandidatenURL)
   .then(function(html){
     //success!
     ditKandidatenNummer = $('div > article', html).length;
-    console.log("ditKandidatenNummer:", ditKandidatenNummer);
     return ditKandidatenNummer;
   })
   .catch(function(err){
