@@ -10,7 +10,6 @@ const puppetLauncher = puppeteer
     const page = await browser.newPage ();
     await page.goto (url);
     await page.waitForSelector ('body');
-    await page.setRequestInterception(true);
     setTimeout(() => { browser.close(); }, 25000);
   })
   //handling any errors
