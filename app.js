@@ -1,4 +1,9 @@
 const puppetLauncher = require('./puppetLauncher');
-console.log('Events transpire every day...');
-puppetLauncher.puppetLauncher
-return;
+
+
+tellMeBoutit()
+function tellMeBoutit() {
+  puppetLauncher.puppetLauncher
+  console.log("Events transpire every day.....");
+}
+// return;
