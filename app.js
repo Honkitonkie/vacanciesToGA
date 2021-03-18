@@ -10,9 +10,9 @@ async function tellMeBoutit() {
   let vacs = x[0]
   let kands = x[1]
 
-  if (Number(vacs) < 25) {
+  if (Number(vacs) < 20) {
     sendMail(x)
-  } else if (Number(kands) < 25) {
+  } else if (Number(kands) < 20) {
     sendMail(x)
   }
   console.log("Events transpire every day.....");
@@ -22,9 +22,9 @@ async function tellMeBoutit() {
 function sendMail(x) {
   var mailOptions = {
     from: process.env.USER,
-    to: 'kooyman.d@gmail.com',
+    to: 'willem@keser.nl,d.kooyman@keser.nl',
     subject: 'De vacatures en/of kandidaten zijn onder het gewenste aantal',
-    text: 'De tellingen zijn binnen en er staan nu ' + x[0] + " vacactures en " + x[1] + " kandidaten live op de website."
+    text: 'De tellingen zijn binnen en er staan nu ' + x[0] + " vacactures en " + x[1] + " kandidaten live op keser.nl."
   };
 
   var transporter = nodemailer.createTransport({
